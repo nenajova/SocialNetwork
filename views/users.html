@@ -1,0 +1,22 @@
+<h1>List of users:</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>User name</th>
+			<th>Num of friends</th>
+			<th>Age</th>
+			<th>Gender</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="user in users">
+			
+			<td><a href="#user?id={{user.id}}">{{user.firstName}} {{user.surname}}</a></td>
+			<td>{{user.friends.length}}</td>
+			<td>{{user.age}}</td>
+			<td>{{user.gender}}</td>
+			
+		</tr>
+	</tbody>
+</table>

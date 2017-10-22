@@ -1,0 +1,24 @@
+<h3><a href="#/"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to User list</a></h3>
+
+<h2><strong>{{user.firstName}}, {{user.surname}}</strong> ({{user.age}}, {{user.gender}})</h2>
+
+<ul class="list-group" ng-show="user.friends.length">
+	<li class="list-group-item active">Direct friends <span class="badge">{{user.friends.length}}</span></li>
+	<li ng-repeat="friend in user.friendsList" class="list-group-item">
+		<a href="#user?id={{friend.id}}">{{friend.firstName}} {{friend.surname}}</a>
+	</li>
+</ul>
+
+<ul class="list-group" ng-show="user.friendsOfFriendsList.length">
+	<li class="list-group-item active">Friends of friends <span class="badge">{{user.friendsOfFriendsList.length}}</span></li>
+	<li ng-repeat="friend in user.friendsOfFriendsList" class="list-group-item">
+		<a href="#user?id={{friend.id}}" title="Friend by {{friend.friendBy}}">{{friend.firstName}} {{friend.surname}}</a>
+	</li>
+</ul>
+
+<ul class="list-group" ng-show="user.suggestedFriendsList.length">
+	<li class="list-group-item active">Suggested friends <span class="badge">{{user.suggestedFriendsList.length}}</span></li>
+	<li ng-repeat="friend in user.suggestedFriendsList" class="list-group-item">
+		<a href="#user?id={{friend.id}}" title="Common friends: {{friend.common_friends}}">{{friend.firstName}} {{friend.surname}}</a>
+	</li>
+</ul>
